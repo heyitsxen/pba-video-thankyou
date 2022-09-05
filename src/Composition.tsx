@@ -1,15 +1,14 @@
 import { AbsoluteFill } from 'remotion';
 import SceneWrapper from './Components/SceneWrapper';
 import scenes from './Scenes';
-
-const framesPerSecond = 60;
+import { FRAME_PER_SECOND } from './utils';
 
 export const MyComposition = () => {
 	const compileScenes = () => {
 		const scenesAsJSX = scenes.reduce(
 			({ startFrame, scenes }, scene) => {
 				const { name, Component, duration } = scene;
-				const durationInFrames = framesPerSecond * duration;
+				const durationInFrames = FRAME_PER_SECOND * duration;
 
 				const newScene = (
 					<SceneWrapper
@@ -18,7 +17,7 @@ export const MyComposition = () => {
 						startFrame={startFrame}
 						frameDuration={durationInFrames}
 					>
-						<Component />
+						<Component startFrame={startFrame} />
 					</SceneWrapper>
 				);
 				return {

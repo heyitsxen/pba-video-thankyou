@@ -1,6 +1,7 @@
 import { Composition } from 'remotion';
 import { MyComposition } from './Composition';
 import './style.css';
+import { FRAME_PER_SECOND } from './utils';
 
 export const RemotionVideo: React.FC = () => {
 	return (
@@ -9,7 +10,7 @@ export const RemotionVideo: React.FC = () => {
 				id="MyComp"
 				component={MyComposition}
 				durationInFrames={3600}
-				fps={60}
+				fps={FRAME_PER_SECOND}
 				width={1280}
 				height={720}
 			/>

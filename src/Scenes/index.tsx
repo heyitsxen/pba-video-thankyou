@@ -7,13 +7,14 @@ import Games from './006_Games';
 import Dispare from './007_Dispare';
 import Revival from './008_Revival';
 import LoveXen from './009_LoveXen';
+import SceneProps from './Scene.type';
 
 const scenes: Scene[] = [
 	{
 		name: 'Hero',
 		Component: Hero,
 		duration: 5,
-		fadeStart: 0,
+		fadeStart: 0, // TODO: add start and end fade
 	},
 	{
 		name: 'Celebration',
@@ -61,7 +62,7 @@ export default scenes;
 
 interface Scene {
 	name: string;
-	Component: () => JSX.Element;
+	Component: React.FC<SceneProps>;
 	duration: number;
 	fadeStart?: number;
 	fadeEnd?: number;
