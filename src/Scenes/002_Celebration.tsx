@@ -19,7 +19,7 @@ const Celebration: React.FC<SceneProps> = ({ startFrame }) => {
 
 	return (
 		<>
-			<h1 className="text-8xl leading-snug text-center z-10">
+			<h1 className="text-9xl leading-snug text-center z-10">
 				We just reached
 				<br />6 years!
 			</h1>

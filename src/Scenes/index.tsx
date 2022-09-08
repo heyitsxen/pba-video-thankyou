@@ -13,13 +13,13 @@ const scenes: Scene[] = [
 	{
 		name: 'Hero',
 		Component: Hero,
-		duration: 5,
+		duration: 6,
 		fadeStart: 0, // TODO: add start and end fade
 	},
 	{
 		name: 'Celebration',
 		Component: Celebration,
-		duration: 5,
+		duration: 7,
 	},
 	{
 		name: 'Thank You',
