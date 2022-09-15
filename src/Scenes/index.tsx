@@ -24,17 +24,17 @@ const scenes: Scene[] = [
 	{
 		name: 'Thank You',
 		Component: ThankYou,
-		duration: 5,
+		duration: 5.5,
 	},
 	{
 		name: 'Missfits',
 		Component: Missfits,
-		duration: 5,
+		duration: 6.5,
 	},
 	{
 		name: 'Duration',
 		Component: Duration,
-		duration: 5,
+		duration: 6,
 	},
 	{
 		name: 'Games',
