@@ -39,7 +39,7 @@ const scenes: Scene[] = [
 	{
 		name: 'Games',
 		Component: Games,
-		duration: 5,
+		duration: 6,
 	},
 	{
 		name: 'Dispare',

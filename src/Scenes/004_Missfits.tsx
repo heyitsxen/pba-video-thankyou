@@ -1,4 +1,4 @@
-import sussy from '../Assets/sussy.gif';
+import sussy from '../Assets/emoji/sussy.gif';
 import SwingInEmoji from '../Components/Decoration/SwingInEmoji';
 
 const Missfits = () => {

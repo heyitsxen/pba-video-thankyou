@@ -1,6 +1,6 @@
 import { useCurrentFrame, Img, interpolate, Easing, random } from 'remotion';
 import { FRAME_PER_SECOND } from '../../utils';
-import baloonClipart from '../../Assets/balloonClipart.png';
+import baloonClipart from '../../Assets/image/balloonClipart.png';
 
 interface BalloonProps {
 	startFrame: number;

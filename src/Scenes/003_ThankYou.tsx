@@ -1,6 +1,6 @@
 import { useCurrentFrame, random } from 'remotion';
 import { Gif } from '@remotion/gif';
-import kawaibear from '../Assets/kawaibear.gif';
+import kawaibear from '../Assets/emoji/kawaibear.gif';
 
 const ThankYou = () => {
 	const heartsTop = new Array(10).fill(true).map((a, i) => {

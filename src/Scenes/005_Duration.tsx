@@ -1,6 +1,6 @@
 import { Gif } from '@remotion/gif';
-import screeedance from '../Assets/screeedance.gif';
-import dogedance from '../Assets/dogedance.gif';
+import screeedance from '../Assets/emoji/screeedance.gif';
+import dogedance from '../Assets/emoji/dogedance.gif';
 import SwingInText from '../Components/Decoration/SwingInText';
 import SwingInEmoji from '../Components/Decoration/SwingInEmoji';
 

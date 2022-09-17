@@ -1,3 +1,7 @@
+import { games } from '../Data/games';
+import ImageGrow from '../Components/Decoration/ImageGrow';
+import { Sequence } from 'remotion';
+
 const Games = () => {
 	return (
 		<>
@@ -6,6 +10,11 @@ const Games = () => {
 				<br />
 				over the years
 			</h1>
+			{games.map((game, idx) => (
+				<Sequence from={5 + idx * 6}>
+					<ImageGrow image={game} />
+				</Sequence>
+			))}
 		</>
 	);
 };

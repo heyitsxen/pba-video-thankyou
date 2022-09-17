@@ -1,5 +1,5 @@
 import { Gif } from '@remotion/gif';
-import lostbear from '../Assets/lostbear.gif';
+import lostbear from '../Assets/emoji/lostbear.gif';
 
 const Hero = () => {
 	return (
