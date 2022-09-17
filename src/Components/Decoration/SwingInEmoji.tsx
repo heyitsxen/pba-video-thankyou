@@ -1,4 +1,4 @@
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, interpolate, Easing, Img } from 'remotion';
 import { Gif } from '@remotion/gif';
 
 // TODO: Check theses
@@ -18,6 +18,7 @@ interface FloatEmoji {
 	startFrame?: number;
 	duration?: number;
 	clockwise?: boolean;
+	img?: boolean; // TODO: refactor to gif
 }
 
 const SwingInEmoji: React.FC<FloatEmoji> = ({
@@ -27,6 +28,7 @@ const SwingInEmoji: React.FC<FloatEmoji> = ({
 	startFrame = 0,
 	duration = 30,
 	clockwise = true,
+	img = false,
 }) => {
 	const frame = useCurrentFrame();
 	const xPosition = interpolate(
@@ -57,6 +59,24 @@ const SwingInEmoji: React.FC<FloatEmoji> = ({
 		}
 	);
 
+	const imageComponent = img ? (
+		<Img
+			src={source}
+			style={{ transform: `rotate(${rotation}deg)` }}
+			width={160}
+			height={160}
+			fit="contain"
+		/>
+	) : (
+		<Gif
+			src={source}
+			style={{ transform: `rotate(${rotation}deg)` }}
+			width={160}
+			height={160}
+			fit="contain"
+		/>
+	);
+
 	return (
 		<div
 			style={{
@@ -66,13 +86,7 @@ const SwingInEmoji: React.FC<FloatEmoji> = ({
 				transform: `translate(-50%, -50%)`,
 			}}
 		>
-			<Gif
-				src={source}
-				style={{ transform: `rotate(${rotation}deg)` }}
-				width={160}
-				height={160}
-				fit="contain"
-			/>
+			{imageComponent}
 		</div>
 	);
 };

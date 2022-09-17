@@ -1,18 +1,14 @@
-import {
-	Img,
-	Sequence,
-	useCurrentFrame,
-	useVideoConfig,
-	spring,
-} from 'remotion';
+import { Img, useCurrentFrame, useVideoConfig, spring } from 'remotion';
+import { Gif } from '@remotion/gif';
 import { GameProps } from '../../Data/games';
 
 interface ImageGrowProps {
 	image: GameProps;
+	gif?: boolean;
 }
 
-const ImageGrow: React.FC<ImageGrowProps> = ({ image }) => {
-	const { dimensions, scale, source, position } = image;
+const ImageGrow: React.FC<ImageGrowProps> = ({ image, gif }) => {
+	const { dimensions, scale = 1, source, position } = image;
 	const frame = useCurrentFrame();
 	const { fps } = useVideoConfig();
 
@@ -27,6 +23,26 @@ const ImageGrow: React.FC<ImageGrowProps> = ({ image }) => {
 		durationInFrames: 45,
 	});
 
+	const imageComponent = gif ? (
+		<Gif
+			style={{
+				transform: `scale(${growth})`,
+				width: dimensions.width * scale,
+				height: dimensions.height * scale,
+			}}
+			src={source}
+		/>
+	) : (
+		<Img
+			style={{
+				transform: `scale(${growth})`,
+				width: dimensions.width * scale,
+				height: dimensions.height * scale,
+			}}
+			src={source}
+		/>
+	);
+
 	return (
 		<div
 			style={{
@@ -35,14 +51,10 @@ const ImageGrow: React.FC<ImageGrowProps> = ({ image }) => {
 				top: `${position.y}%`,
 				transform: 'translate(-50%, -50%)',
 				width: dimensions.width * scale,
+				height: dimensions.height * scale,
 			}}
 		>
-			<Img
-				style={{
-					transform: `scale(${growth})`,
-				}}
-				src={source}
-			/>
+			{imageComponent}
 		</div>
 	);
 };

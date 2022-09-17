@@ -1,5 +1,6 @@
 import { Composition } from 'remotion';
 import { MyComposition } from './Composition';
+import './font.css';
 import './style.css';
 import { FRAME_PER_SECOND } from './utils';
 

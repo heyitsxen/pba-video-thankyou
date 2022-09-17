@@ -5,16 +5,16 @@ import { Sequence } from 'remotion';
 const Games = () => {
 	return (
 		<>
-			<h1 className="text-7xl leading-snug text-center max-w-full">
+			{games.map((game, idx) => (
+				<Sequence from={5 + idx * 10}>
+					<ImageGrow image={game} />
+				</Sequence>
+			))}
+			<h1 className="text-8xl leading-snug text-center max-w-full z-10">
 				We've played alot
 				<br />
 				over the years
 			</h1>
-			{games.map((game, idx) => (
-				<Sequence from={5 + idx * 6}>
-					<ImageGrow image={game} />
-				</Sequence>
-			))}
 		</>
 	);
 };

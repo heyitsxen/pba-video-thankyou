@@ -25,7 +25,7 @@ export interface GameProps {
 		x: number;
 		y: number;
 	};
-	scale: number;
+	scale?: number;
 }
 
 export const games: GameProps[] = [
@@ -36,10 +36,10 @@ export const games: GameProps[] = [
 			height: 470,
 		},
 		position: {
-			x: 50,
-			y: 25,
+			x: 48,
+			y: 20,
 		},
-		scale: 0.45,
+		scale: 0.4,
 	},
 	{
 		source: logoApex,
@@ -60,10 +60,10 @@ export const games: GameProps[] = [
 			height: 2160,
 		},
 		position: {
-			x: 21,
-			y: 56,
+			x: 18,
+			y: 55,
 		},
-		scale: 0.065,
+		scale: 0.05,
 	},
 	{
 		source: logoTerraria,
@@ -84,10 +84,10 @@ export const games: GameProps[] = [
 			height: 400,
 		},
 		position: {
-			x: 12,
+			x: 10,
 			y: 35,
 		},
-		scale: 0.6,
+		scale: 0.5,
 	},
 	{
 		source: logoOverwatch,
@@ -97,7 +97,7 @@ export const games: GameProps[] = [
 		},
 		position: {
 			x: 37,
-			y: 7,
+			y: 5,
 		},
 		scale: 0.1,
 	},
@@ -133,7 +133,7 @@ export const games: GameProps[] = [
 		},
 		position: {
 			x: 26,
-			y: 27,
+			y: 22,
 		},
 		scale: 0.25,
 	},
@@ -157,7 +157,7 @@ export const games: GameProps[] = [
 		},
 		position: {
 			x: 89,
-			y: 15,
+			y: 10,
 		},
 		scale: 0.07,
 	},
@@ -180,8 +180,8 @@ export const games: GameProps[] = [
 			height: 2160,
 		},
 		position: {
-			x: 80,
-			y: 33,
+			x: 85,
+			y: 28,
 		},
 		scale: 0.07,
 	},
@@ -204,7 +204,7 @@ export const games: GameProps[] = [
 			height: 500,
 		},
 		position: {
-			x: 85,
+			x: 87,
 			y: 55,
 		},
 		scale: 0.45,

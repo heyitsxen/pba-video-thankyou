@@ -66,3 +66,6 @@ Notice that for some entities a company license is needed. Read [the terms here]
 - [Diablo 3](https://www.pngmart.com/image/504793)
 - [Apex Legends](https://logos-world.net/apex-legends-logo/)
 - [Elden Ring](https://en.bandainamcoent.eu/elden-ring/elden-ring)
+- [FFXIV](https://finalfantasy.fandom.com/wiki/Final_Fantasy_XIV)
+- [Overwatch](https://www.nicepng.com/ourpic/u2w7r5i1e6o0q8w7_overwatch-logo-unchained-podcast/)
+- [Genshin Impact](https://www.hoyolab.com/article/63716)

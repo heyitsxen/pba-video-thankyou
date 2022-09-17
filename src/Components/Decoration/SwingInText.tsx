@@ -1,5 +1,4 @@
 import { useCurrentFrame, interpolate, Easing } from 'remotion';
-import { Gif } from '@remotion/gif';
 
 // TODO: Check theses
 const fastSlow = Easing.bezier(0, 0, 0.6, 1);
@@ -69,7 +68,14 @@ const SwingInText: React.FC<FloatText> = ({
 				transform: `translate(-50%, -50%)`,
 			}}
 		>
-			<p style={{ transform: `rotate(${rotation}deg)` }}>{children}</p>
+			<p
+				style={{
+					transform: `rotate(${rotation}deg)`,
+					inlineSize: 'max-content',
+				}}
+			>
+				{children}
+			</p>
 		</div>
 	);
 };
