@@ -24,6 +24,7 @@ export interface GameProps {
 	position: {
 		x: number;
 		y: number;
+		rotation?: number;
 	};
 	scale?: number;
 }

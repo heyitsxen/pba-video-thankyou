@@ -4,7 +4,7 @@ import { interpolate, useCurrentFrame } from 'remotion';
 interface SceneWrapperProps {
 	startFrame: number;
 	frameDuration: number;
-	name: string;
+	name?: string;
 	fadeDuration?: number;
 	children?: JSX.Element;
 }

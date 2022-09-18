@@ -8,7 +8,7 @@ import SwingInEmoji from '../Components/Decoration/SwingInEmoji';
 const Duration = () => {
 	return (
 		<>
-			<div className="flex flex-nowrap items-center gap-20 pb-14">
+			<div className="flex flex-nowrap items-center gap-20">
 				<h1 className="text-8xl leading-snug text-center max-w-full">
 					I'm amazed that
 					<br />

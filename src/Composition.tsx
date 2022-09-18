@@ -1,7 +1,13 @@
 import { AbsoluteFill } from 'remotion';
+import QuotesOfTime from './Components/QuotesOfTime';
 import SceneWrapper from './Components/SceneWrapper';
 import scenes from './Scenes';
 import { FRAME_PER_SECOND } from './utils';
+
+const scenesDurationInFrames = scenes.reduce(
+	(acc, scene) => acc + scene.duration * FRAME_PER_SECOND,
+	0
+);
 
 export const MyComposition = () => {
 	const compileScenes = () => {
@@ -37,6 +43,7 @@ export const MyComposition = () => {
 			className="text-slate-50 items-center justify-center"
 		>
 			{compileScenes()}
+			<QuotesOfTime startFrame={scenesDurationInFrames} />
 		</AbsoluteFill>
 	);
 };
