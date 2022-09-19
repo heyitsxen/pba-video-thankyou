@@ -11,7 +11,7 @@ interface QuotesOfTimeProps {
 const QuotesOfTime: React.FC<QuotesOfTimeProps> = ({ startFrame }) => {
 	const quotesComponents = quotes.map((data, idx) => {
 		const { quote, emojis } = data;
-		const durationInFrames = FRAME_PER_SECOND * 6;
+		const durationInFrames = FRAME_PER_SECOND * 6.5;
 		const adjustedStartFrame = durationInFrames * idx;
 
 		return (

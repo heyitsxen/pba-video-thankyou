@@ -69,7 +69,7 @@ const heartPositions = [
 		emoji: '💝',
 	},
 	{
-		top: -1,
+		top: 2,
 		left: 23,
 		emoji: '💗',
 	},

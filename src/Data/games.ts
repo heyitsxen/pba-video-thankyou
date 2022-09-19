@@ -93,14 +93,14 @@ export const games: GameProps[] = [
 	{
 		source: logoOverwatch,
 		dimensions: {
-			width: 3840,
-			height: 2160,
+			width: 672,
+			height: 250,
 		},
 		position: {
 			x: 37,
 			y: 5,
 		},
-		scale: 0.1,
+		scale: 0.6,
 	},
 	{
 		source: logoOSU,

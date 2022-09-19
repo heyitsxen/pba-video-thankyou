@@ -5,12 +5,15 @@ import { GameProps } from '../../Data/games';
 interface ImageGrowProps {
 	image: GameProps;
 	gif?: boolean;
+	rock?: boolean;
 }
 
-const ImageGrow: React.FC<ImageGrowProps> = ({ image, gif }) => {
+const ImageGrow: React.FC<ImageGrowProps> = ({ image, gif, rock }) => {
 	const { dimensions, scale = 1, source, position } = image;
 	const frame = useCurrentFrame();
 	const { fps } = useVideoConfig();
+
+	const rockRotation = Math.sin(frame / 10) * 8;
 
 	const growth = spring({
 		from: 0,
@@ -49,7 +52,9 @@ const ImageGrow: React.FC<ImageGrowProps> = ({ image, gif }) => {
 				position: 'absolute',
 				left: `${position.x}%`,
 				top: `${position.y}%`,
-				transform: 'translate(-50%, -50%)',
+				transform: `translate(-50%, -50%) rotate(${
+					rock ? rockRotation : 0
+				}deg)`,
 				width: dimensions.width * scale,
 				height: dimensions.height * scale,
 			}}

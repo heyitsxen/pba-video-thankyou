@@ -6,7 +6,6 @@ import Confetti from '../Components/Decoration/Confetti';
 
 const Celebration: React.FC<SceneProps> = ({ startFrame }) => {
 	const frame = useCurrentFrame();
-	const delayFrame = 60;
 
 	const randomValue = new Array(25).fill(true).map((a, i) => {
 		return {
