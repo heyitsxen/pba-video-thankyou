@@ -9,44 +9,45 @@ import Revival from './008_Revival';
 import Love from './009_Love';
 import Segway from './010_Segway';
 import NoContext from './011_NoContext';
+import Outro from './00X_Outro';
 import SceneProps from './Scene.type';
 
-const scenes: Scene[] = [
+export const pbaScenes: Scene[] = [
 	{
 		name: 'Hero',
 		Component: Hero,
-		duration: 6,
+		duration: 10,
 		fadeStart: 0, // TODO: add start and end fade
 	},
 	{
 		name: 'Celebration',
 		Component: Celebration,
-		duration: 7,
+		duration: 8,
 	},
 	{
 		name: 'Thank You',
 		Component: ThankYou,
-		duration: 6,
+		duration: 7,
 	},
 	{
 		name: 'Missfits',
 		Component: Missfits,
-		duration: 6.5,
+		duration: 7,
 	},
 	{
 		name: 'Duration',
 		Component: Duration,
-		duration: 6,
+		duration: 6.5,
 	},
 	{
 		name: 'Games',
 		Component: Games,
-		duration: 7.5,
+		duration: 8,
 	},
 	{
 		name: 'Dispare',
 		Component: Dispare,
-		duration: 6,
+		duration: 6.5,
 	},
 	{
 		name: 'Revival',
@@ -56,8 +57,19 @@ const scenes: Scene[] = [
 	{
 		name: 'Love',
 		Component: Love,
-		duration: 5,
+		duration: 5.5,
 	},
+	{
+		name: 'Outro',
+		Component: Outro,
+		duration: 7,
+		componentProps: {
+			tracklist: ['Waking up'],
+		},
+	},
+];
+
+export const quotesPreScenes: Scene[] = [
 	{
 		name: 'Segway',
 		Component: Segway,
@@ -70,12 +82,22 @@ const scenes: Scene[] = [
 	},
 ];
 
-export default scenes;
+export const quotesPostScenes: Scene[] = [
+	{
+		name: 'Outro',
+		Component: Outro,
+		duration: 7,
+		componentProps: {
+			tracklist: ['Sleepy and Comfy', 'Sleepy and Comfy2'],
+		},
+	},
+];
 
-interface Scene {
+export interface Scene {
 	name: string;
-	Component: React.FC<SceneProps>;
+	Component: React.FC<any>;
 	duration: number;
 	fadeStart?: number;
 	fadeEnd?: number;
+	componentProps?: any;
 }

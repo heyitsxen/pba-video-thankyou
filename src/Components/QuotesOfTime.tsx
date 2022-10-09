@@ -1,17 +1,13 @@
 import { Sequence } from 'remotion';
 import { quotes } from '../Data/quotes';
-import { FRAME_PER_SECOND } from '../utils';
+import { QUOTES_DURATION_IN_FRAMES } from '../utils';
 import SceneWrapper from './SceneWrapper';
 import QuoteScene from '../Scenes/00X_Quote';
 
-interface QuotesOfTimeProps {
-	startFrame: number;
-}
-
 const QuotesOfTime: React.FC<QuotesOfTimeProps> = ({ startFrame }) => {
 	const quotesComponents = quotes.map((data, idx) => {
-		const { quote, emojis } = data;
-		const durationInFrames = FRAME_PER_SECOND * 6.5;
+		const { quote, emojis, textStyle, containerStyle } = data;
+		const durationInFrames = QUOTES_DURATION_IN_FRAMES;
 		const adjustedStartFrame = durationInFrames * idx;
 
 		return (
@@ -21,7 +17,12 @@ const QuotesOfTime: React.FC<QuotesOfTimeProps> = ({ startFrame }) => {
 				startFrame={adjustedStartFrame}
 				frameDuration={durationInFrames}
 			>
-				<QuoteScene quote={quote} emojis={emojis} />
+				<QuoteScene
+					quote={quote}
+					emojis={emojis}
+					textStyle={textStyle}
+					containerStyle={containerStyle}
+				/>
 			</SceneWrapper>
 		);
 	});
@@ -36,3 +37,7 @@ const QuotesOfTime: React.FC<QuotesOfTimeProps> = ({ startFrame }) => {
 };
 
 export default QuotesOfTime;
+
+interface QuotesOfTimeProps {
+	startFrame: number;
+}

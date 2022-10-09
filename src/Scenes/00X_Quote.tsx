@@ -4,11 +4,15 @@ import { Quote } from '../Data/quotes';
 import ImageGrow from '../Components/Decoration/ImageGrow';
 
 const varPos = 8;
-
-const QuoteScene: React.FC<Quote> = ({ quote, emojis }) => {
+const QuoteScene: React.FC<Quote> = ({
+	quote,
+	emojis,
+	containerStyle,
+	textStyle,
+}) => {
 	const quoteComponent = Array.isArray(quote)
-		? quote.map((q) => quoteTextWrapper(q))
-		: quoteTextWrapper(quote);
+		? quote.map((q) => quoteTextWrapper(q, textStyle))
+		: quoteTextWrapper(quote, textStyle);
 
 	const emojiComponentData = useMemo(() => {
 		const emojiSources = emojis.reduce(
@@ -16,15 +20,18 @@ const QuoteScene: React.FC<Quote> = ({ quote, emojis }) => {
 			[] as string[]
 		);
 
-		const shuffledEmojis = shuffle(emojiSources);
-		const shuffledCoordinates = shuffle(emojiCoordinates);
+		const shuffledEmojis = shuffle(emojiSources, `emoji-shuffle-${quote}`);
+		const shuffledCoordinates = shuffle(
+			emojiCoordinates,
+			`coord-shuffle-${quote}`
+		);
 
 		return shuffledEmojis.map((source, idx) => {
 			const xVariation = random(`x-${idx}-${quote}`) * varPos - varPos / 2;
 			const yVariation = random(`y-${idx}-${quote}`) * varPos - varPos / 2;
 			const coord = shuffledCoordinates[idx];
 			return (
-				<Sequence from={idx * 6} layout="none">
+				<Sequence key={idx} from={idx * 6} layout="none">
 					<ImageGrow
 						image={{
 							source: source,
@@ -47,7 +54,10 @@ const QuoteScene: React.FC<Quote> = ({ quote, emojis }) => {
 
 	return (
 		<>
-			<div className="flex flex-col gap-4" style={{ maxWidth: '70%' }}>
+			<div
+				className="flex flex-col gap-4"
+				style={{ maxWidth: '70%', ...containerStyle }}
+			>
 				{quoteComponent}
 			</div>
 			{emojiComponentData}
@@ -57,9 +67,19 @@ const QuoteScene: React.FC<Quote> = ({ quote, emojis }) => {
 
 export default QuoteScene;
 
-const quoteTextWrapper = (text: string) => (
-	<h1 className="text-7xl leading-snug text-center">"{text}"</h1>
-);
+const quoteTextWrapper = (text: string, textStyle = {}) => {
+	const appliedText = text
+		.split('**')
+		.map((str, idx) =>
+			idx % 2 ? <span style={{ color: '#70E275' }}>{str}</span> : str
+		);
+
+	return (
+		<h1 className="text-7xl leading-snug text-center" style={textStyle}>
+			"{appliedText}"
+		</h1>
+	);
+};
 
 const emojiCoordinates = [
 	{ x: 10, y: 15 },
@@ -80,14 +100,15 @@ const emojiCoordinates = [
 	{ x: 10, y: 38.33 },
 ];
 
-const shuffle = (array: any[]) => {
+// FROM: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+const shuffle = (array: any[], key: string) => {
 	let currentIndex = array.length,
 		randomIndex;
 
 	// While there remain elements to shuffle.
 	while (currentIndex != 0) {
 		// Pick a remaining element.
-		randomIndex = Math.floor(Math.random() * currentIndex);
+		randomIndex = Math.floor(random(key) * currentIndex);
 		currentIndex--;
 
 		// And swap it with the current element.

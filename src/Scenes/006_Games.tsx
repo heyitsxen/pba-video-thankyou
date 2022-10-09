@@ -6,7 +6,7 @@ const Games = () => {
 	return (
 		<>
 			{games.map((game, idx) => (
-				<Sequence from={5 + idx * 10}>
+				<Sequence key={idx} from={5 + idx * 10}>
 					<ImageGrow image={game} />
 				</Sequence>
 			))}
