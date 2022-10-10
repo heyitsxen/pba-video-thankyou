@@ -52,11 +52,13 @@ const Outro: React.FC<OutroProps> = ({ tracklist }) => {
 				</div>
 			</div>
 			<div
+				id="horizontal-divider"
 				style={{
 					position: 'absolute',
 					top: '20%',
 					height: '60%',
-					border: '1px solid white',
+					border: '1px solid rgba(255,255,255,0.5)',
+					borderRadius: '50%',
 				}}
 			/>
 		</>

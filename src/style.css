@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 #container {
-	background: #36393f;
+	--background-color: #36393f;
+	background: var(--background-color);
 	font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -13,4 +14,5 @@ font-family: 'Josefin Sans', sans-serif;
 font-family: 'Kanit', sans-serif;
 font-family: 'Permanent Marker', cursive;
 font-family: 'Secular One', sans-serif;
+font-family: 'Silkscreen', cursive;
 */
