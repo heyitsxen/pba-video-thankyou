@@ -16,7 +16,7 @@ export const pbaScenes: Scene[] = [
 	{
 		name: 'Hero',
 		Component: Hero,
-		duration: 10,
+		duration: 13.5,
 		fadeStart: 0, // TODO: add start and end fade
 	},
 	{
@@ -32,37 +32,37 @@ export const pbaScenes: Scene[] = [
 	{
 		name: 'Missfits',
 		Component: Missfits,
-		duration: 7,
+		duration: 6.5,
 	},
 	{
 		name: 'Duration',
 		Component: Duration,
-		duration: 6.5,
+		duration: 6,
 	},
 	{
 		name: 'Games',
 		Component: Games,
-		duration: 8,
+		duration: 7.5,
 	},
 	{
 		name: 'Dispare',
 		Component: Dispare,
-		duration: 6.5,
+		duration: 6,
 	},
 	{
 		name: 'Revival',
 		Component: Revival,
-		duration: 5.5,
+		duration: 6,
 	},
 	{
 		name: 'Love',
 		Component: Love,
-		duration: 5.5,
+		duration: 6,
 	},
 	{
 		name: 'Outro',
 		Component: Outro,
-		duration: 7,
+		duration: 8,
 		componentProps: {
 			tracklist: ['Waking up'],
 		},
