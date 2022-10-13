@@ -1,17 +1,14 @@
-import { useCurrentFrame, random } from 'remotion';
+import { random, useVideoConfig } from 'remotion';
 import SceneProps from './Scene.type';
-import { FRAME_PER_SECOND } from '../utils';
 import Balloon from '../Components/Decoration/Balloon';
 import Confetti from '../Components/Decoration/Confetti';
 
-const Celebration: React.FC<SceneProps> = ({ startFrame }) => {
-	const frame = useCurrentFrame();
+const Celebration: React.FC<SceneProps> = () => {
+	const { fps } = useVideoConfig();
 
 	const randomValue = new Array(25).fill(true).map((a, i) => {
 		return {
-			startFrame: Math.floor(
-				random(`seed-startFrame-${i}`) * (FRAME_PER_SECOND * 2)
-			),
+			startFrame: Math.floor(random(`seed-startFrame-${i}`) * (fps * 2)),
 			left: `${i * 4}%`,
 		};
 	});

@@ -54,6 +54,11 @@ Notice that for some entities a company license is needed. Read [the terms here]
 
 ## Sources
 
+### Icons
+
+- [Pointer: by Becca from Noun Project](https://thenounproject.com/icon/pointer-2559539/)
+- [Halloween Ghost Sticker by KiraKira](https://giphy.com/stickers/transparent-dv0E50gKjjaRzbcltM)
+
 ### Game logos
 
 - [Minecraft](https://logos-world.net/minecraft-logo/)

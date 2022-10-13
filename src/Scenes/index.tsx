@@ -10,7 +10,6 @@ import Love from './009_Love';
 import Segway from './010_Segway';
 import NoContext from './011_NoContext';
 import Outro from './00X_Outro';
-import SceneProps from './Scene.type';
 
 export const pbaScenes: Scene[] = [
 	{

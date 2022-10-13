@@ -3,14 +3,6 @@ import { Gif } from '@remotion/gif';
 import kawaibear from '../Assets/emoji/kawaibear.gif';
 
 const ThankYou = () => {
-	const heartsTop = new Array(10).fill(true).map((a, i) => {
-		return {
-			startFrame: i * 5,
-			left: i * 10,
-			top: 0,
-		};
-	});
-
 	return (
 		<>
 			<h1 className="text-8xl leading-snug text-center">
@@ -27,13 +19,6 @@ const ThankYou = () => {
 };
 
 export default ThankYou;
-
-interface HeartProps {
-	top: number;
-	left: number;
-	emoji: string;
-}
-79;
 
 const Heart: React.FC<HeartProps> = ({ top, left, emoji }) => {
 	const frame = useCurrentFrame();
@@ -56,6 +41,12 @@ const Heart: React.FC<HeartProps> = ({ top, left, emoji }) => {
 		</span>
 	);
 };
+
+interface HeartProps {
+	top: number;
+	left: number;
+	emoji: string;
+}
 
 const heartPositions = [
 	{

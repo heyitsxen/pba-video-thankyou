@@ -1,6 +1,6 @@
+import { Sequence } from 'remotion';
 import { games } from '../Data/games';
 import ImageGrow from '../Components/Decoration/ImageGrow';
-import { Sequence } from 'remotion';
 
 const Games = () => {
 	return (

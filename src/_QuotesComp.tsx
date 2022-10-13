@@ -15,6 +15,7 @@ const preScenesInFrames = quotesPreScenes.reduce(
 );
 const scenesInFrames = quotes.length * QUOTES_DURATION_IN_FRAMES;
 
+// TODO: Finalise song list
 const playlist = [
 	{
 		songFile: 'SleepyAndComfy.mp3',

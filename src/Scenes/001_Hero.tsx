@@ -5,9 +5,12 @@ import {
 	useVideoConfig,
 	interpolate,
 	Easing,
+	Img,
 } from 'remotion';
 import { Gif } from '@remotion/gif';
 import lostbear from '../Assets/emoji/lostbear.gif';
+import pointer from '../Assets/image/pointer.svg';
+import kirakira_ghost from '../Assets/image/kirakira ghost.gif';
 
 const url =
 	'https://cdn.vox-cdn.com/thumbor/_n1jODtU4MKAU6VJmMta_WK9BZA=/0x0:1920x1080/1200x675/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/65650200/jbareham_191158_ply0958_decade_minecraft.0.jpg';
@@ -23,34 +26,38 @@ const Hero = () => {
 		</>
 	);
 };
-/*<Sidegames2 startFrame={fps * 2} />*/
 
 export default Hero;
 
 const Sidegames2: React.FC<SlideProps> = ({ startFrame }) => {
-	//duration 3s
 	const { fps } = useVideoConfig();
 	const frame = useCurrentFrame();
 
 	const scaleStart = startFrame;
 	const scaleDuration = fps * 0.75;
-	const scale = interpolate(
-		frame,
-		[scaleStart, scaleStart + scaleDuration],
-		[1, 0.7],
-		{
-			easing: Easing.bezier(0.53, 0.04, 0.7, 0.18),
-			extrapolateLeft: 'clamp',
-			extrapolateRight: 'clamp',
-		}
-	);
+	const scaleFrameKeynotes = [scaleStart, scaleStart + scaleDuration];
+	const scale = interpolate(frame, scaleFrameKeynotes, [1, 0.7], {
+		easing: Easing.bezier(0.17, 0.67, 0.59, 0.8), // TODO: adjust easing
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+	const perspective = interpolate(frame, scaleFrameKeynotes, [0, 100], {
+		easing: Easing.bezier(0.17, 0.67, 0.59, 0.8),
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
+	const skew = interpolate(frame, scaleFrameKeynotes, [0, 25], {
+		easing: Easing.bezier(0.17, 0.67, 0.59, 0.8),
+		extrapolateLeft: 'clamp',
+		extrapolateRight: 'clamp',
+	});
 
 	const rotateSwipeStart = startFrame + scaleDuration + fps / 2;
 	const rotateSwipeDuration = fps;
 	const frameKeynotes = [
 		rotateSwipeStart,
 		rotateSwipeStart + rotateSwipeDuration / 5,
-		rotateSwipeStart + 2 * (rotateSwipeDuration / 5),
+		rotateSwipeStart + 1.5 * (rotateSwipeDuration / 5),
 		rotateSwipeStart + rotateSwipeDuration,
 	];
 	const rotate = interpolate(frame, frameKeynotes, [0, -0.5, -0.5, -15], {
@@ -64,34 +71,98 @@ const Sidegames2: React.FC<SlideProps> = ({ startFrame }) => {
 		extrapolateRight: 'clamp',
 	});
 
+	const pointerStart = startFrame;
+	const pointerFrameKeynotes = [
+		pointerStart,
+		scaleStart + scaleDuration,
+		rotateSwipeStart,
+		rotateSwipeStart + rotateSwipeDuration / 5,
+		rotateSwipeStart + 1.5 * (rotateSwipeDuration / 5),
+	];
+	const pointerTop = interpolate(
+		frame,
+		pointerFrameKeynotes,
+		[90, 60, 60, 58, 53],
+		{
+			extrapolateLeft: 'clamp',
+			extrapolateRight: 'clamp',
+		}
+	);
+	const pointerLeft = interpolate(
+		frame,
+		pointerFrameKeynotes,
+		[50, 47, 47, 45, 40],
+		{
+			extrapolateLeft: 'clamp',
+			extrapolateRight: 'clamp',
+		}
+	);
+	const pointerTransparency = interpolate(
+		frame,
+		pointerFrameKeynotes.slice(-2).map((frame) => frame + fps / 2),
+		[1, 0],
+		{
+			easing: Easing.bezier(0.17, 0.67, 0.83, 0.67),
+			extrapolateLeft: 'clamp',
+			extrapolateRight: 'clamp',
+		}
+	);
+
 	return (
-		<AbsoluteFill
-			style={{
-				backgroundColor: 'var(--background-color)',
-				transform: `scale(${scale}) rotate(${rotate}deg) translate(${
-					swipe * 5
-				}%,${swipe * 2}%)`,
-				transformOrigin: '50% 50%',
-			}}
-		>
-			<div className="flex justify-center items-center h-full">
-				<h1
-					className="text-9xl leading-compact text-center tracking-tight"
-					style={{ fontFamily: "'Josefin Sans', sans-serif" }}
+		<>
+			<AbsoluteFill
+				style={{
+					perspective: perspective ? `${perspective}rem` : 'none',
+				}}
+			>
+				<AbsoluteFill
+					id="container"
+					style={{
+						transform: `
+							scale(${scale})
+							rotate(${rotate}deg)
+							translate(${swipe * 5}%,${swipe * 2}%)
+							rotateX(${skew}deg)
+						`,
+						boxShadow:
+							'6.7px 6.7px 4.8px rgba(0, 0, 0, 0.044), 13.4px 13.4px 11.5px rgba(0, 0, 0, 0.064), 21.1px 21.1px 21.7px rgba(0, 0, 0, 0.072), 31.4px 31.4px 38.6px rgba(0, 0, 0, 0.081), 49.2px 49.2px 72.3px rgba(0, 0, 0, 0.102), 100px 100px 173px rgba(0, 0, 0, 0.15)',
+						transformOrigin: '50% 50%',
+					}}
 				>
-					Sidegames2
-				</h1>
-			</div>
-		</AbsoluteFill>
+					<div className="flex flex-col justify-center items-center h-full">
+						<h1
+							className="text-9xl leading-compact text-center tracking-tight text-purple-400 tracking-widest leading-normal"
+							style={{
+								fontFamily: "'Rock Salt', cursive",
+								fontWeight: 'bolder',
+							}}
+						>
+							Sidegames2
+						</h1>
+						<Gif src={kirakira_ghost} height={200} width={300} />
+					</div>
+				</AbsoluteFill>
+			</AbsoluteFill>
+			<Img
+				style={{
+					position: 'absolute',
+					left: `${pointerLeft}%`,
+					top: `${pointerTop}%`,
+					transform: 'translate(50%, 50%) rotate(-25deg)',
+					opacity: pointerTransparency,
+				}}
+				src={pointer}
+				height={150}
+				width={150}
+			/>
+		</>
 	);
 };
 
 const Minecraft: React.FC<SlideProps> = ({ startFrame }) => {
-	//duration 3s
 	const { fps } = useVideoConfig();
 	const frame = useCurrentFrame();
 
-	// rotate
 	const hingeStart = frame - startFrame;
 	const hingeDuration = fps * 3.5;
 	const hinge = spring({
@@ -106,7 +177,6 @@ const Minecraft: React.FC<SlideProps> = ({ startFrame }) => {
 		durationInFrames: hingeDuration,
 	});
 
-	// y-axis drop
 	const dropStart = startFrame + fps * 1.5;
 	const dropDuration = fps * 1.5;
 	const drop = interpolate(
@@ -141,7 +211,7 @@ const Minecraft: React.FC<SlideProps> = ({ startFrame }) => {
 						className="text-9xl leading-compact text-center tracking-tight"
 						style={{
 							fontFamily: "'Silkscreen', cursive",
-							webkitTextStroke: '5px rgba(0,0,0,0.2)',
+							WebkitTextStroke: '5px rgba(0,0,0,0.2)',
 						}}
 					>
 						CHRISTIAN
@@ -157,11 +227,9 @@ const Minecraft: React.FC<SlideProps> = ({ startFrame }) => {
 };
 
 const Popobear: React.FC<SlideProps> = ({ startFrame }) => {
-	//duration 3s
 	const { fps } = useVideoConfig();
 	const frame = useCurrentFrame();
 
-	// rotate
 	const rotationStart = frame - startFrame;
 	const rotationDuration = fps * 3;
 	const rotation = spring({
@@ -170,6 +238,7 @@ const Popobear: React.FC<SlideProps> = ({ startFrame }) => {
 		frame: rotationStart,
 		fps,
 		config: {
+			// TODO: adjust spring settings
 			mass: 0.5,
 			damping: 5,
 		},
@@ -177,15 +246,17 @@ const Popobear: React.FC<SlideProps> = ({ startFrame }) => {
 	});
 
 	return (
-		<AbsoluteFill
-			className="flex flex-nowrap justify-center items-center"
-			style={{
-				transform: `rotate(${rotation}deg)`,
-				transformOrigin: '50% 50%',
-			}}
-		>
+		<AbsoluteFill className="flex flex-nowrap justify-center items-center">
 			<div className="flex flex-nowrap gap-20">
-				<Gif src={lostbear} width={250} height={250} />
+				<Gif
+					src={lostbear}
+					width={250}
+					height={250}
+					style={{
+						transform: `rotate(${rotation}deg)`,
+						transformOrigin: '50% 50%',
+					}}
+				/>
 				<h1
 					className="text-8xl leading-compact text-left"
 					style={{ fontFamily: "'Kanit', sans-serif" }}

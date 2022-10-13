@@ -1,18 +1,26 @@
-import { Audio, Sequence, staticFile, interpolate } from 'remotion';
-import { FRAME_PER_SECOND } from '../utils';
-
-const fadeMusic = FRAME_PER_SECOND * 5;
+import {
+	Audio,
+	Sequence,
+	staticFile,
+	interpolate,
+	useVideoConfig,
+} from 'remotion';
 
 const Music: React.FC<MusicProps> = ({ playlist }) => {
+	const { fps } = useVideoConfig();
+	const fadeMusic = fps * 5;
+
 	const playlistComponents = () => {
 		const constructedPlaylist = playlist.reduce(
 			({ startFrame, tracks }, data) => {
 				const { songFile, duration } = data;
-				const durationInFrames = FRAME_PER_SECOND * duration;
+				const durationInFrames = fps * duration;
+				const songName = songFile.replace('.mp3', '');
 
 				const newSong = (
 					<Sequence
-						name={songFile.replace('.mp3', '')}
+						key={songName}
+						name={songName}
 						from={startFrame}
 						durationInFrames={durationInFrames}
 					>
