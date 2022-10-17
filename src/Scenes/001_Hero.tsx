@@ -8,7 +8,7 @@ import {
 	Img,
 } from 'remotion';
 import { Gif } from '@remotion/gif';
-import lostbear from '../Assets/emoji/lostbear.gif';
+import { lostbear } from '../Assets/emoji';
 import pointer from '../Assets/image/pointer.svg';
 import kirakira_ghost from '../Assets/image/kirakira ghost.gif';
 
@@ -41,16 +41,22 @@ const Sidegames2: React.FC<SlideProps> = ({ startFrame }) => {
 		extrapolateLeft: 'clamp',
 		extrapolateRight: 'clamp',
 	});
-	const perspective = interpolate(frame, scaleFrameKeynotes, [0, 100], {
-		easing: Easing.bezier(0.17, 0.67, 0.59, 0.8),
-		extrapolateLeft: 'clamp',
-		extrapolateRight: 'clamp',
-	});
-	const skew = interpolate(frame, scaleFrameKeynotes, [0, 25], {
-		easing: Easing.bezier(0.17, 0.67, 0.59, 0.8),
-		extrapolateLeft: 'clamp',
-		extrapolateRight: 'clamp',
-	});
+	const perspective = interpolate(
+		frame,
+		scaleFrameKeynotes,
+		[0, 100],
+		interpolateSettings({
+			easing: Easing.bezier(0.17, 0.67, 0.59, 0.8),
+		})
+	);
+	const skew = interpolate(
+		frame,
+		scaleFrameKeynotes,
+		[0, 25],
+		interpolateSettings({
+			easing: Easing.bezier(0.17, 0.67, 0.59, 0.8),
+		})
+	);
 
 	const rotateSwipeStart = startFrame + scaleDuration + fps / 2;
 	const rotateSwipeDuration = fps;
@@ -60,24 +66,30 @@ const Sidegames2: React.FC<SlideProps> = ({ startFrame }) => {
 		rotateSwipeStart + 1.5 * (rotateSwipeDuration / 5),
 		rotateSwipeStart + rotateSwipeDuration,
 	];
-	const rotate = interpolate(frame, frameKeynotes, [0, -0.5, -0.5, -15], {
-		easing: Easing.bezier(0.53, 0.04, 0.7, 0.18),
-		extrapolateLeft: 'clamp',
-		extrapolateRight: 'clamp',
-	});
-	const swipe = interpolate(frame, frameKeynotes, [0, -1, -1, -30], {
-		easing: Easing.bezier(0.17, 0.67, 0.83, 0.67),
-		extrapolateLeft: 'clamp',
-		extrapolateRight: 'clamp',
-	});
+	const rotate = interpolate(
+		frame,
+		frameKeynotes,
+		[0, -0.5, -0.5, -15],
+		interpolateSettings({
+			easing: Easing.bezier(0.53, 0.04, 0.7, 0.18),
+		})
+	);
+	const swipe = interpolate(
+		frame,
+		frameKeynotes,
+		[0, -1, -1, -30],
+		interpolateSettings({
+			easing: Easing.bezier(0.17, 0.67, 0.83, 0.67),
+		})
+	);
 
 	const pointerStart = startFrame;
 	const pointerFrameKeynotes = [
 		pointerStart,
 		scaleStart + scaleDuration,
 		rotateSwipeStart,
-		rotateSwipeStart + rotateSwipeDuration / 5,
 		rotateSwipeStart + 1.5 * (rotateSwipeDuration / 5),
+		rotateSwipeStart + 2 * (rotateSwipeDuration / 5),
 	];
 	const pointerTop = interpolate(
 		frame,
@@ -282,3 +294,16 @@ const Popobear: React.FC<SlideProps> = ({ startFrame }) => {
 interface SlideProps {
 	startFrame: number;
 }
+
+//Interpolate
+type ExtrapolateType = 'extend' | 'identity' | 'clamp';
+interface InterpolateOptions {
+	easing?: (input: number) => number;
+	extrapolateLeft?: ExtrapolateType;
+	extrapolateRight?: ExtrapolateType;
+}
+const interpolateSettings = (params = {}): InterpolateOptions => ({
+	extrapolateLeft: 'clamp',
+	extrapolateRight: 'clamp',
+	...params,
+});

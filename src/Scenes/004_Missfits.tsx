@@ -1,5 +1,5 @@
 import SwingInEmoji from '../Components/Decoration/SwingInEmoji';
-import sussy from '../Assets/emoji/sussy.gif';
+import { sussy } from '../Assets/emoji';
 
 // TODO: replace duplicate sussys with other emotes
 const Missfits = () => {

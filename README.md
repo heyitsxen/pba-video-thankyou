@@ -1,12 +1,9 @@
-# Remotion video with Tailwind
+# PBA 6th Year Aniversary Videos
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <img src="https://github.com/remotion-dev/logo/raw/main/withtitle/element-0.png">
-  </a>
-</p>
+## TODO:
 
-Welcome to your Remotion project!
+- fix absolute imports
+- fix webp typescript type
 
 ## Commands
 
@@ -25,7 +22,8 @@ yarn start
 **Render video**
 
 ```console
-yarn build
+yarn build-pba
+yarn build-quotes
 ```
 
 **Upgrade Remotion**
@@ -34,30 +32,25 @@ yarn build
 yarn run upgrade
 ```
 
-## Docs
-
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
-
-Get started with Tailwind by reading the ["Utility first" page](https://tailwindcss.com/docs/utility-first)
-
-## Help
-
-We provide help [on our Discord server](https://remotion.dev/discord).
-
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
-
-## License
-
-Notice that for some entities a company license is needed. Read [the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
-
 ## Sources
 
-### Icons
+### Icons/Images
 
 - [Pointer: by Becca from Noun Project](https://thenounproject.com/icon/pointer-2559539/)
 - [Halloween Ghost Sticker by KiraKira](https://giphy.com/stickers/transparent-dv0E50gKjjaRzbcltM)
+- [Minecraft Background](https://www.polygon.com/2019/11/7/20952214/minecraft-most-important-game-of-the-decade-2010)
+
+### Emojis
+
+Alot of emojis come from diffrent servers, I'll and add them as I can find the original sources/refrences. SVGs emojis are Discord defaults.
+
+- warbongo - saltedxiv
+- kawaibear, pizzabear, popobear, sadbear - [based of the pobear meme](https://knowyourmeme.com/memes/polar-bear-gif)
+- report, sussy - based of amongus
+- bunboi, yoshiprave, dontthinkdrink, playdead - FFXIV related
+- honk, honk, honkgil, honkhonk, peacewasneveranoption - Untitlted Goose Game
+- dodolove - Monster Hunter
+- toxic - Pepe Universe | Emotes
 
 ### Game logos
 
@@ -74,3 +67,11 @@ Notice that for some entities a company license is needed. Read [the terms here]
 - [FFXIV](https://finalfantasy.fandom.com/wiki/Final_Fantasy_XIV)
 - [Overwatch](https://www.nicepng.com/ourpic/u2w7r5i1e6o0q8w7_overwatch-logo-unchained-podcast/)
 - [Genshin Impact](https://www.hoyolab.com/article/63716)
+
+### Images
+
+## Remotion stuff
+
+### License
+
+Notice that for some entities a company license is needed. Read [the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).

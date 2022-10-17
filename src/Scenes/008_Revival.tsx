@@ -1,13 +1,15 @@
 import { Sequence } from 'remotion';
 import SwingInEmoji from '../Components/Decoration/SwingInEmoji';
 import ImageGrow from '../Components/Decoration/ImageGrow';
-import boing from '../Assets/emoji/boing.gif';
-import comfy from '../Assets/emoji/comfy.webp';
-import owocatblob from '../Assets/emoji/owocatblob.gif';
-import pepelove from '../Assets/emoji/pepelove.gif';
-import bongocatlove from '../Assets/emoji/bongocatlove.gif';
-import bearlovetackle from '../Assets/emoji/bearlovetackle.gif';
-import honkhonk from '../Assets/emoji/honkhonk.gif';
+import {
+	boing,
+	comfy,
+	owocatblob,
+	pepelove,
+	bongocatlove,
+	bearlovetackle,
+	honkhonk,
+} from '../Assets/emoji';
 
 const Revival = () => {
 	return (

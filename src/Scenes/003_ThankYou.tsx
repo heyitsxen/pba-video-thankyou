@@ -1,6 +1,6 @@
 import { useCurrentFrame, random } from 'remotion';
 import { Gif } from '@remotion/gif';
-import kawaibear from '../Assets/emoji/kawaibear.gif';
+import { kawaibear } from '../Assets/emoji';
 
 const ThankYou = () => {
 	return (

@@ -1,8 +1,6 @@
 import SwingInText from '../Components/Decoration/SwingInText';
 import SwingInEmoji from '../Components/Decoration/SwingInEmoji';
-import sadbear from '../Assets/emoji/sadbear.gif';
-import saddog from '../Assets/emoji/saddog.webp';
-import catok from '../Assets/emoji/catok.webp';
+import { sadbear, saddog, catok } from '../Assets/emoji';
 
 const Dispare = () => {
 	return (
