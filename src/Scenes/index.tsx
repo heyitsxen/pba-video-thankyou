@@ -72,12 +72,12 @@ export const quotesPreScenes: Scene[] = [
 	{
 		name: 'Segway',
 		Component: Segway,
-		duration: 5,
+		duration: 7,
 	},
 	{
 		name: 'NoContext',
 		Component: NoContext,
-		duration: 5,
+		duration: 7,
 	},
 ];
 

@@ -9,6 +9,13 @@ export const QUOTES_DURATION_IN_FRAMES =
 	QUOTES_DURATION_PER_SECOND * FRAME_PER_SECOND;
 
 // HELPERS
+export const getScenesInTotalFrames = (scenes: Scene[]) => {
+	return scenes.reduce(
+		(acc, scene) => acc + scene.duration * FRAME_PER_SECOND,
+		0
+	);
+};
+
 export const compileScenes = (scenes: Scene[], start = 0) => {
 	const scenesAsJSX = scenes.reduce(
 		({ startFrame, scenes }, scene) => {

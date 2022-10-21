@@ -6,7 +6,7 @@ import {
 	useVideoConfig,
 } from 'remotion';
 
-const Music: React.FC<MusicProps> = ({ playlist }) => {
+const Music: React.FC<MusicProps> = ({ playlist, totalFrames }) => {
 	const { fps } = useVideoConfig();
 	const fadeMusic = fps * 5;
 
@@ -17,6 +17,22 @@ const Music: React.FC<MusicProps> = ({ playlist }) => {
 				const durationInFrames = fps * duration;
 				const songName = songFile.replace('.mp3', '');
 
+				// Check if song duration is longer than the videos max frame
+				const normalFadeTiming = [
+					durationInFrames - fadeMusic,
+					durationInFrames,
+				];
+				const maxFadeTiming = [
+					totalFrames - startFrame - fadeMusic,
+					totalFrames - startFrame,
+				];
+				const timeRemaining = totalFrames - (startFrame + durationInFrames);
+				const audioFrames = [
+					0,
+					fadeMusic,
+					...(timeRemaining < 0 ? maxFadeTiming : normalFadeTiming),
+				];
+
 				const newSong = (
 					<Sequence
 						key={songName}
@@ -26,17 +42,9 @@ const Music: React.FC<MusicProps> = ({ playlist }) => {
 					>
 						<Audio
 							volume={(f) =>
-								interpolate(
-									f,
-									[
-										0,
-										fadeMusic,
-										durationInFrames - fadeMusic,
-										durationInFrames,
-									],
-									[0, 0.5, 0.5, 0],
-									{ extrapolateLeft: 'clamp' }
-								)
+								interpolate(f, audioFrames, [0, 0.5, 0.5, 0], {
+									extrapolateLeft: 'clamp',
+								})
 							}
 							src={staticFile(songFile)}
 						/>
@@ -66,6 +74,7 @@ export default Music;
 
 interface MusicProps {
 	playlist: Playlist[];
+	totalFrames: number;
 }
 
 interface Playlist {

@@ -3,7 +3,7 @@
 ## TODO:
 
 - fix absolute imports
-- fix webp typescript type
+- fix webp typescript warning
 
 ## Commands
 
@@ -42,15 +42,16 @@ yarn run upgrade
 
 ### Emojis
 
-Alot of emojis come from diffrent servers, I'll and add them as I can find the original sources/refrences. SVGs emojis are Discord defaults.
+Alot of emojis come from diffrent servers. I'll gradually add them as I can find the original sources/refrences. SVGs emojis are Discord defaults.
 
 - warbongo - saltedxiv
-- kawaibear, pizzabear, popobear, sadbear - [based of the pobear meme](https://knowyourmeme.com/memes/polar-bear-gif)
+- kawaibear, pizzabear, popobear, sadbear, rainbowbear - [based of the pobear meme](https://knowyourmeme.com/memes/polar-bear-gif)
 - report, sussy - based of amongus
 - bunboi, yoshiprave, dontthinkdrink, playdead - FFXIV related
 - honk, honk, honkgil, honkhonk, peacewasneveranoption - Untitlted Goose Game
 - dodolove - Monster Hunter
 - toxic - Pepe Universe | Emotes
+- nakcatirl - actual irl cat (very fluffy and is a the king)
 
 ### Game logos
 
@@ -68,7 +69,16 @@ Alot of emojis come from diffrent servers, I'll and add them as I can find the o
 - [Overwatch](https://www.nicepng.com/ourpic/u2w7r5i1e6o0q8w7_overwatch-logo-unchained-podcast/)
 - [Genshin Impact](https://www.hoyolab.com/article/63716)
 
-### Images
+### Music
+
+All music that I used in the videos are from [🎤 Going Live 🖥️ by Walking Dog](https://www.youtube.com/watch?v=8IiVnsHT7QA). The files for the audio are not in this repo.They do provide DMCA/ROYALTY FREE music. Consider supporting this artist on their [Bandcamp](https://walkingdog.bandcamp.com/).
+
+- **PBA**
+  - Waking Up - Track 1
+- **Quotes of Time**
+  - Sleepy And Comfy - Track 29
+  - Routine Number 2 - Track 27
+  - Lights Out - Track 28
 
 ## Remotion stuff
 
