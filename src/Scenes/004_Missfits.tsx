@@ -1,7 +1,6 @@
 import SwingInEmoji from '../Components/Decoration/SwingInEmoji';
-import { sussy } from '../Assets/emoji';
+import { sussy, peepomadpet, gotembear } from '../Assets/emoji';
 
-// TODO: replace duplicate sussys with other emotes
 const Missfits = () => {
 	return (
 		<>
@@ -17,14 +16,14 @@ const Missfits = () => {
 				startFrame={30}
 			/>
 			<SwingInEmoji
-				source={sussy}
-				startPosition={{ x: 100, y: -10, rotation: 0 }}
+				source={peepomadpet}
+				startPosition={{ x: 100, y: -15, rotation: 0 }}
 				endPosition={{ x: 77, y: 15, rotation: 0 }}
 				startFrame={60}
 			/>
 			<SwingInEmoji
-				source={sussy}
-				startPosition={{ x: 40, y: 110, rotation: 0 }}
+				source={gotembear}
+				startPosition={{ x: 40, y: 115, rotation: 0 }}
 				endPosition={{ x: 65, y: 90, rotation: 0 }}
 				startFrame={90}
 			/>

@@ -85,6 +85,7 @@ import catgag from './catgag.gif';
 import crackeyes from './crackeyes.gif';
 import dogedance from './dogedance.gif';
 import firebear from './firebear.gif';
+import gotembear from './gotembear.gif';
 import honkfast from './honkfast.gif';
 import honkhonk from './honkhonk.gif';
 import honkspeed from './honk.gif';
@@ -100,8 +101,9 @@ import owocatblob from './owocatblob.gif';
 import popcat from './popcat.gif';
 import popobear from './popobear.gif';
 import peepoleaving from './peepoleaving.gif';
-import pepelove from './pepelove.gif';
+import peepomadpet from './peepomadpet.gif';
 import peepomoney from './peepomoney.gif';
+import pepelove from './pepelove.gif';
 import pizzabear from './pizzabear.gif';
 import rainbowbear from './rainbowbear.gif';
 import rainbowshrug from './rainbowshrug.gif';
@@ -200,6 +202,7 @@ export {
 	crackeyes,
 	dogedance,
 	firebear,
+	gotembear,
 	honkfast,
 	honkhonk,
 	honkspeed,
@@ -215,8 +218,9 @@ export {
 	popcat,
 	popobear,
 	peepoleaving,
-	pepelove,
+	peepomadpet,
 	peepomoney,
+	pepelove,
 	pizzabear,
 	rainbowbear,
 	rainbowshrug,

@@ -12,7 +12,7 @@ const Music: React.FC<MusicProps> = ({ playlist, totalFrames }) => {
 
 	const playlistComponents = () => {
 		const constructedPlaylist = playlist.reduce(
-			({ startFrame, tracks }, data) => {
+			({ startFrame, tracks }, data, idx) => {
 				const { songFile, duration } = data;
 				const durationInFrames = fps * duration;
 				const songName = songFile.replace('.mp3', '');
@@ -35,7 +35,7 @@ const Music: React.FC<MusicProps> = ({ playlist, totalFrames }) => {
 
 				const newSong = (
 					<Sequence
-						key={songName}
+						key={`${idx}-${songName}`}
 						name={songName}
 						from={startFrame}
 						durationInFrames={durationInFrames}

@@ -13,26 +13,26 @@ const Outro: React.FC<OutroProps> = ({ tracklist }) => {
 					id="lhs"
 					className="flex flex-col gap-4 align-middle justify-center text-center"
 				>
-					<div className="flex flex-nowrap gap-4 justify-center mb-8">
+					<div className="flex flex-nowrap gap-4 justify-center mb-6">
 						<Img src={musicalNote} width={45} height={45} />
 						<h1 className="text-4xl leading-compact text-center">
 							by WALKING DOG
 						</h1>
 					</div>
-					<p className="text-4xl mb-6">
+					<p className="text-4xl mb-4">
 						🎤 <span className="underline underline-offset-4">Going Live</span>{' '}
 						🖥️
 					</p>
 					<ul>
 						{tracklist.map((track) => (
-							<li key={track} className="text-3xl mb-4">
+							<li key={track} className="text-3xl mb-2">
 								{track}
 							</li>
 						))}
 					</ul>
 				</div>
 
-				<div id="rhs">
+				<div id="rhs" style={{ margin: 'auto' }}>
 					<div className="flex flex-col gap-8">
 						<h1 className="text-5xl leading-compact text-center">
 							Edited by Xen

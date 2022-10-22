@@ -16,7 +16,6 @@ export const pbaScenes: Scene[] = [
 		name: 'Hero',
 		Component: Hero,
 		duration: 13.5,
-		fadeStart: 0, // TODO: add start and end fade
 	},
 	{
 		name: 'Celebration',
@@ -87,7 +86,12 @@ export const quotesPostScenes: Scene[] = [
 		Component: Outro,
 		duration: 7,
 		componentProps: {
-			tracklist: ['Sleepy and Comfy', 'Sleepy and Comfy2'],
+			tracklist: [
+				'Sleepy and Comfy',
+				'Routine Number 2',
+				'Lights Out',
+				'Checking Socials',
+			],
 		},
 	},
 ];
@@ -96,7 +100,5 @@ export interface Scene {
 	name: string;
 	Component: React.FC<any>;
 	duration: number;
-	fadeStart?: number;
-	fadeEnd?: number;
 	componentProps?: any;
 }

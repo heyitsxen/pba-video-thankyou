@@ -68,11 +68,15 @@ const QuoteScene: React.FC<Quote> = ({
 export default QuoteScene;
 
 const quoteTextWrapper = (text: string, textStyle = {}) => {
-	const appliedText = text
-		.split('**')
-		.map((str, idx) =>
-			idx % 2 ? <span style={{ color: '#70E275' }}>{str}</span> : str
-		);
+	const appliedText = text.split('**').map((str, idx) =>
+		idx % 2 ? (
+			<span key={`${idx}-${str}`} style={{ color: '#70E275' }}>
+				{str}
+			</span>
+		) : (
+			str
+		)
+	);
 
 	return (
 		<h1 className="text-7xl leading-snug text-center" style={textStyle}>
