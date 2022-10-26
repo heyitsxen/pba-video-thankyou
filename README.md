@@ -8,6 +8,7 @@ It was a project to play around with React Remotion and practice web animations.
 
 - fix absolute imports
 - fix webp typescript warning
+- upgrade breaks emojis, find out why
 
 # Commands
 
@@ -116,11 +117,14 @@ const playlist = [
 
 # Sources
 
+Be aware that all of these assets in `src/Assets` do not origin from me. Please check for their sources.
+
 ## Icons/Images
 
 - [Pointer: by Becca from Noun Project](https://thenounproject.com/icon/pointer-2559539/)
 - [Halloween Ghost Sticker by KiraKira](https://giphy.com/stickers/transparent-dv0E50gKjjaRzbcltM)
 - [Minecraft Background](https://www.polygon.com/2019/11/7/20952214/minecraft-most-important-game-of-the-decade-2010)
+- Ballon clipart TBA
 
 ## Emojis
 
@@ -129,11 +133,14 @@ Alot of emojis come from diffrent servers. I'll gradually add them as I can find
 - warbongo - saltedxiv
 - kawaibear, pizzabear, popobear, sadbear, rainbowbear - [based of the pobear meme](https://knowyourmeme.com/memes/polar-bear-gif)
 - report, sussy - based of amongus
-- bunboi, yoshiprave, dontthinkdrink, playdead - FFXIV related
+- bunboi, yoshiprave, dontthinkdrink, playdead, keikoncerned, brutesussy, bahamautlick - FFXIV related
 - honk, honk, honkgil, honkhonk, peacewasneveranoption - Untitlted Goose Game
 - dodolove - Monster Hunter
 - toxic - Pepe Universe | Emotes
 - nakcatirl - actual irl cat (very fluffy and is a the king)
+- boing, bkiss - Bugcat Capoo
+- sussy, report - Among Us
+- wutcat, wutkaren - [Women yelling at a cat meme](https://en.wikipedia.org/wiki/Woman_yelling_at_a_cat)
 
 ## Game logos
 
@@ -165,6 +172,11 @@ They do provide DMCA/ROYALTY FREE music. Consider supporting this artist on thei
   - Lights Out - Track 28
 
 # Remotion stuff
+
+## Links
+
+- [Website](https://www.remotion.dev/)
+- [Docs](https://www.remotion.dev/docs/)
 
 ## License
 

@@ -96,27 +96,6 @@ export const quotes: Quote[] = [
 		],
 	},
 	{
-		quote: "I didn't know you had friends",
-		emojis: [
-			{
-				source: emoji.fblue,
-				count: 4,
-			},
-			{
-				source: emoji.firebear,
-				count: 3,
-			},
-			{
-				source: emoji.sadge,
-				count: 5,
-			},
-			{
-				source: emoji.pepehands,
-				count: 3,
-			},
-		],
-	},
-	{
 		quote: "Tomorrow I'm just not waking up",
 		emojis: [
 			{
@@ -203,6 +182,140 @@ export const quotes: Quote[] = [
 			},
 			{
 				source: emoji.worryvanish,
+				count: 2,
+			},
+		],
+	},
+	{
+		quote:
+			"My real world job is hard I don't play this game to have a **rotation**",
+		emojis: [
+			{
+				source: emoji.thistbh,
+				count: 1,
+			},
+			{
+				source: emoji.keikoncerned,
+				count: 2,
+			},
+			{
+				source: emoji.yoshiprave,
+				count: 2,
+			},
+			{
+				source: emoji.owomegakekw,
+				count: 2,
+			},
+			{
+				source: emoji.life,
+				count: 2,
+			},
+			{
+				source: emoji.dontthinkdrink,
+				count: 3,
+			},
+			{
+				source: emoji.playdead,
+				count: 2,
+			},
+			{
+				source: emoji.yoshipuwu,
+				count: 1,
+			},
+		],
+	},
+	{
+		quote: 'I feel like im just a collection of memes',
+		emojis: [
+			{
+				source: emoji.honkhonk,
+				count: 2,
+			},
+			{
+				source: emoji.honk,
+				count: 2,
+			},
+			{
+				source: emoji.peacewasneveranoption,
+				count: 2,
+			},
+			{
+				source: emoji.thistbh,
+				count: 1,
+			},
+			{
+				source: emoji.crackeyes,
+				count: 2,
+			},
+			{
+				source: emoji.angrysadlove,
+				count: 4,
+			},
+			{
+				source: emoji.laughcrydie,
+				count: 1,
+			},
+			{
+				source: emoji.honkfast,
+				count: 2,
+			},
+		],
+	},
+	{
+		quote: "You don't want to know what my right hand is doing",
+		emojis: [
+			{
+				source: emoji.report,
+				count: 6,
+			},
+			{
+				source: emoji.lewd,
+				count: 4,
+			},
+			{
+				source: emoji.sussy,
+				count: 4,
+			},
+			{
+				source: emoji.eyes,
+				count: 2,
+			},
+		],
+	},
+	{
+		quote: "I didn't know you had friends",
+		emojis: [
+			{
+				source: emoji.fblue,
+				count: 4,
+			},
+			{
+				source: emoji.firebear,
+				count: 3,
+			},
+			{
+				source: emoji.sadge,
+				count: 5,
+			},
+			{
+				source: emoji.pepehands,
+				count: 3,
+			},
+		],
+	},
+	{
+		quote: "I'm just gonna play one round of Overwatch then go to sleep",
+		emojis: [
+			{
+				source: emoji.redditlucio,
+				count: 8,
+			},
+			{
+				source: emoji.doubtx,
+				count: 6,
+			},
+			{
+				source: emoji.sussy,
 				count: 2,
 			},
 		],
