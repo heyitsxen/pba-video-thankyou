@@ -6,6 +6,7 @@
 		"start": "remotion preview src/index.tsx",
 		"build-pba": "remotion render src/index.tsx PBA-Thankyou out/pba.mp4",
 		"build-quotes": "remotion render src/index.tsx quotesOfTime out/quotes.mp4",
+		"build-banner": "remotion render src/index.tsx banner out/banner.gif",
 		"upgrade": "remotion upgrade",
 		"test": "eslint src --ext ts,tsx,js,jsx && tsc"
 	},

@@ -1,6 +1,7 @@
 import { Composition } from 'remotion';
 import { PBA } from './_PBA';
 import { QuotesComp } from './_QuotesComp';
+import { Banner } from './_Banner';
 import './font.css';
 import './style.css';
 import { FRAME_PER_SECOND, QUOTES_DURATION_IN_FRAMES } from './utils';
@@ -38,6 +39,7 @@ export const RemotionVideo: React.FC = () => {
 				width={1280}
 				height={720}
 			/>
+			<Banner />
 		</>
 	);
 };
